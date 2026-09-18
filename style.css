@@ -44,6 +44,25 @@ h2 {
     gap: 20px;
     margin-bottom: 30px;
 }
+/*Same thing for this hero we are in the hero and just targeting the div for it*/
+.hero > div {
+    flex: 1 1 0;
+}
+/* in the hero section we are just targeting the div and inside the div we are targeting the img and figure elements*/
+.hero > div > img,
+.hero figure img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: 220px;
+    object-fit: cover;
+    margin: 20px auto 0;
+}
+
+.hero figure {
+    flex: 0 1 360px;
+    margin: 0;
+}
 
 .button {
     display: inline-block;
@@ -55,7 +74,7 @@ h2 {
 
 .event-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1.5fr 1fr;
     gap: 20px;
 }
 
@@ -63,6 +82,15 @@ h2 {
     background-color: white;
     border: 1px solid #ccc;
     padding: 15px;
+}
+
+
+.event img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    margin-bottom: 12px;
 }
 
 .about-section {
@@ -109,27 +137,39 @@ footer {
     margin-top: 30px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px){
     .hero {
         flex-direction: column;
     }
-
+    .about-section {
+        flex-direction: column;
+    }
     .event-grid {
         grid-template-columns: 1fr 1fr;
     }
-
     .event-layout {
         grid-template-columns: 1fr;
     }
-}
-
-@media (max-width: 550px) {
-    nav ul {
+    .footer-content {
         flex-direction: column;
-        align-items: center;
     }
 
+    @media (max-width: 500px){
+       
+        nav ul {
+            flex-direction: column;
+        }
+    }
     .event-grid {
         grid-template-columns: 1fr;
+    }
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    .event-intro{
+        flex-direction: column;
+    }
+    .related-events {
+        flex-direction: column;
     }
 }
